@@ -15,30 +15,22 @@ double Distance3D(double x1, double y1, double x2, double y2, double z1, double 
 
 //Метод для запроса координат точек
 
-void Coord(string n)
+double Coord(string n, double coord)
 {
     Console.WriteLine();
     Console.Write("Введите координаты точки: " + n + " = ");
+    coord = Convert.ToDouble(Console.ReadLine());
+    return coord;
 }
 
-string n;
-Coord("x1");
-double x1 = Convert.ToDouble(Console.ReadLine());
+double x1 = 0; double y1 = 0; double z1 = 0; double x2 = 0; double y2 = 0; double z2 = 0;
 
-Coord("y1");
-double y1 = Convert.ToDouble(Console.ReadLine());
-
-Coord("z1");
-double z1 = Convert.ToDouble(Console.ReadLine());
-
-Coord("x2");
-double x2 = Convert.ToDouble(Console.ReadLine());
-
-Coord("y2");
-double y2 = Convert.ToDouble(Console.ReadLine());
-
-Coord("z2");
-double z2 = Convert.ToDouble(Console.ReadLine());
+x1 = Coord("x1", x1);
+y1 = Coord("y1", y1);
+z1 = Coord("z1", z1);
+x2 = Coord("x2", x2);
+y2 = Coord("y2", y2);
+z2 = Coord("z2", z2);
 
 double res = Distance3D(x1, y1, x2, y2, z1, z2);
 Console.WriteLine();
